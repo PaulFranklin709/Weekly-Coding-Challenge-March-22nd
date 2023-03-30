@@ -1,10 +1,10 @@
 public class Main {
     public static void main(String[] args) {
-        multiples(7, 5);
+        printMultiples(multiples(7, 5));
 
-        multiples(12, 10);
+        printMultiples(multiples(12, 10));
 
-        multiples(17, 6);
+        printMultiples(multiples(17, 6));
     }
 
     public static int[] multiples(int num, int length) {
@@ -15,6 +15,12 @@ public class Main {
             numMultiples[i] = num * multiple;
             multiple++;
         }
+
+        return numMultiples;
+    }
+
+    public static void printMultiples(int[] numMultiples) {
+        int length = numMultiples.length;
 
         StringBuilder sb = new StringBuilder();
         sb.append("[");
@@ -29,7 +35,5 @@ public class Main {
         sb.append("]");
 
         System.out.println(sb);
-
-        return numMultiples;
     }
 }
